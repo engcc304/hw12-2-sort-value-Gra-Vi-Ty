@@ -85,6 +85,7 @@ int main() {
     
     for (int i = 0; i < 4; i++) {
         Name( i + 1 ) ;
+        printf("Name : \n");
         scanf("%s", group[i].name);
         printf("Score : \n");
         scanf("%f", &group[i].score);
