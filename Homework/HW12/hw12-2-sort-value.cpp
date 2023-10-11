@@ -101,7 +101,7 @@ int main() {
             group[2].name,
             group[3].name,
             group[4].name) ;
-    printf( "%4.2f %4.2f %4.2f %4.2f",
+    printf( "%.2f %.2f %.2f %.2f",
             group[1].score,
             group[2].score, 
             group[3].score, 
