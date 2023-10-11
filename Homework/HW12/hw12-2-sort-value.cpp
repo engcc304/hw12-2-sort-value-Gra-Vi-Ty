@@ -69,7 +69,7 @@ struct Student {
     float score;
 };
 
-void displayName(int i) {
+void Name(int i) {
     if (i == 1)
         printf("Student A\n");
     else if (i == 2)
@@ -84,17 +84,15 @@ int main() {
     struct Student group[4];
     
     for (int i = 0; i < 4; i++) {
-        printf("Name : \n");
+        Name( i + 1 ) ;
         scanf("%s", group[i].name);
         printf("Score : \n");
         scanf("%f", &group[i].score);
     }
 
-    // เรียงข้อมูลตามคะแนนจากมากไปน้อย
     for (int i = 0; i < 4; i++) {
         for (int j = i + 1; j < 4; j++) {
             if (group[i].score < group[j].score) {
-                // สลับข้อมูลของนักเรียน i และ j
                 struct Student temp = group[i];
                 group[i] = group[j];
                 group[j] = temp;
