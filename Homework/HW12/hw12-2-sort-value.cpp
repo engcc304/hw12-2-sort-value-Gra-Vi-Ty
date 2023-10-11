@@ -102,9 +102,8 @@ int main() {
         }
     }
 
-    printf("\nOutput:\n");
     for (int i = 0; i < 4; i++) {
-        printf("%5s ", group[i].name);
+        printf("%s ", group[i].name);
     }
     printf("\n");
     for (int i = 0; i < 4; i++) {
