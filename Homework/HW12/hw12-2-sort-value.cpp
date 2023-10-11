@@ -64,39 +64,53 @@
 #include <stdio.h>
 #include <string.h>
 
-struct A {
-    char name[50] ;
-    float score ;
-} ;
+struct Student {
+    char name[50];
+    float score;
+};
 
-void name(int i) {
-    if(i == 1) printf("Student A\n");
-    else if(i == 2) printf("Student B\n");
-    else if(i == 3) printf("Student C\n");
-    else printf("Student D\n");
+void displayName(int i) {
+    if (i == 1)
+        printf("Student A\n");
+    else if (i == 2)
+        printf("Student B\n");
+    else if (i == 3)
+        printf("Student C\n");
+    else
+        printf("Student D\n");
 }
 
 int main() {
-    int n = 4 ;
-    struct A group[n] ;
-    for (int i = 1; i <= n; i++) {
-        name( i ) ;
-        printf( "Name : \n" ) ;
-        scanf( "%s", group[i].name ) ;
-        printf( "Score : \n" ) ;
-        scanf( "%f", &group[i].score ) ;
+    struct Student group[4];
+    
+    for (int i = 0; i < 4; i++) {
+        displayName(i + 1);
+        printf("Name : \n");
+        scanf("%s", group[i].name);
+        printf("Score : \n");
+        scanf("%f", &group[i].score);
     }
 
-    printf( "%5s %5s %5s %5s\n",
-            group[1].name,
-            group[2].name,
-            group[3].name,
-            group[4].name) ;
-    printf( "%.2f %.2f %.2f %.2f",
-            group[1].score,
-            group[2].score, 
-            group[3].score, 
-            group[4].score) ;
-    
-    return 0 ;
+    // เรียงข้อมูลตามคะแนนจากมากไปน้อย
+    for (int i = 0; i < 4; i++) {
+        for (int j = i + 1; j < 4; j++) {
+            if (group[i].score > group[j].score) {
+                // สลับข้อมูลของนักเรียน i และ j
+                struct Student temp = group[i];
+                group[i] = group[j];
+                group[j] = temp;
+            }
+        }
+    }
+
+    printf("\nOutput:\n");
+    for (int i = 0; i < 4; i++) {
+        printf("%5s ", group[i].name);
+    }
+    printf("\n");
+    for (int i = 0; i < 4; i++) {
+        printf("%.2f ", group[i].score);
+    }
+
+    return 0;
 }
