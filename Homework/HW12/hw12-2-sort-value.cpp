@@ -73,11 +73,11 @@ void Name(int i) {
     if (i == 1)
         printf("Student A\n");
     else if (i == 2)
-        printf("Student B\n");
+        printf("\nStudent B\n");
     else if (i == 3)
-        printf("Student C\n");
+        printf("\nStudent C\n");
     else
-        printf("Student D\n");
+        printf("\nStudent D\n");
 }
 
 int main() {
