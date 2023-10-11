@@ -96,7 +96,7 @@ int main() {
     printf( "Score : \n" ) ;
     scanf( "%f", &group[4].score ) ;
 
-    printf( "%4s %4s %4s %4s\n",
+    printf( "%s %s %s %s\n",
             group[1].name,
             group[2].name,
             group[3].name,
