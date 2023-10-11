@@ -60,3 +60,54 @@
         99.99 88.88 77.77 66.66
 
 */
+
+#include <stdio.h>
+#include <string.h>
+
+struct Student {
+    char name[50];
+    float score;
+};
+
+void Name(int i) {
+    if (i == 1)
+        printf("Student A\n");
+    else if (i == 2)
+        printf("\nStudent B\n");
+    else if (i == 3)
+        printf("\nStudent C\n");
+    else
+        printf("\nStudent D\n");
+}
+
+int main() {
+    struct Student group[4];
+    
+    for (int i = 0; i < 4; i++) {
+        Name( i + 1 ) ;
+        printf("Name : \n");
+        scanf("%s", group[i].name);
+        printf("Score : \n");
+        scanf("%f", &group[i].score);
+    }
+
+    for (int i = 0; i < 4; i++) {
+        for (int j = i + 1; j < 4; j++) {
+            if (group[i].score < group[j].score) {
+                struct Student temp = group[i];
+                group[i] = group[j];
+                group[j] = temp;
+            }
+        }
+    }
+
+    for (int i = 0; i < 4; i++) {
+        printf("%s ", group[i].name);
+    }
+    printf("\n");
+    for (int i = 0; i < 4; i++) {
+        printf("%.2f ", group[i].score);
+    }
+
+    return 0;
+}
