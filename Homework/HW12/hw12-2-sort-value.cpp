@@ -69,34 +69,25 @@ struct A {
     float score ;
 } ;
 
+void name(int i) {
+    if(i == 1) printf("Student A\n");
+    else if(i == 2) printf("Student B\n");
+    else if(i == 3) printf("Student C\n");
+    else printf("Student D\n");
+}
+
 int main() {
     int n = 4 ;
     struct A group[n] ;
-    printf( "Student A\n" ) ;
-    printf( "Name : \n" ) ;
-    scanf( "%s", group[1].name ) ;
-    printf( "Score : \n" ) ;
-    scanf( "%f", &group[1].score ) ;
+    for (int i = 1; i <= n; i++) {
+        name( i ) ;
+        printf( "Name : \n" ) ;
+        scanf( "%s", group[i].name ) ;
+        printf( "Score : \n" ) ;
+        scanf( "%f", &group[i].score ) ;
+    }
 
-    printf( "Student B\n" ) ;
-    printf( "Name : \n" ) ;
-    scanf( "%s", group[2].name ) ;
-    printf( "Score : \n" ) ;
-    scanf( "%f", &group[2].score ) ;
-
-    printf( "Student C\n" ) ;
-    printf( "Name : \n" ) ;
-    scanf( "%s", group[3].name ) ;
-    printf( "Score : \n" ) ;
-    scanf( "%f", &group[3].score ) ;
-
-    printf( "Student D\n" ) ;
-    printf( "Name : \n" ) ;
-    scanf( "%s", group[4].name ) ;
-    printf( "Score : \n" ) ;
-    scanf( "%f", &group[4].score ) ;
-
-    printf( "%s %s %s %s\n",
+    printf( "%5s %5s %5s %5s\n",
             group[1].name,
             group[2].name,
             group[3].name,
